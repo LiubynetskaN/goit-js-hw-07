@@ -25,18 +25,25 @@ ulEl.insertAdjacentHTML("beforeend", string);
 
 function openModalHandler(event) {
   event.preventDefault();
-  const instance = basicLightbox
-    .create(
-      `<img width="1400" height="900" src="${event.target.dataset.source}">`
-    )
-    instance.show();
- 
-    document.addEventListener("keydown", closeModalHandler);
+  const instance = basicLightbox.create(
+    `<img width="1400" height="900" src="${event.target.dataset.source}">`,
+    {
+      onShow: () => {
+        document.addEventListener("keydown", closeModalHandler);
+      },
+      onClose: () => {
+        document.removeEventListener("keydown", closeModalHandler);
+      },
+    }
+  );
+  instance.show();
+
   function closeModalHandler(event) {
-    
     if (event.code === "Escape") {
       instance.close();
     }
+  }
+}
 document.removeEventListener("keydown", closeModalHandler)
   }
 }
