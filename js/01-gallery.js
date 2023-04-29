@@ -45,5 +45,5 @@ function openModalHandler(event) {
   }
 }
 document.removeEventListener("keydown", closeModalHandler)
-  }
-}
+  
+

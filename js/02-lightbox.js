@@ -24,6 +24,6 @@ function openModalHandler(event) {
         captionsData: 'alt',
         captionDelay: 250,
  }); 
- lightBox.on('show.simplelightbox', function () {})
+ lightBox.on('show.simplelightbox', function () {})}
  
    
