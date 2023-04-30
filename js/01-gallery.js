@@ -29,10 +29,10 @@ function openModalHandler(event) {
     `<img width="1400" height="900" src="${event.target.dataset.source}">`,
     {
       onShow: () => {
-        document.addEventListener("keydown", closeModalHandler);
+        window.addEventListener("keydown", closeModalHandler);
       },
       onClose: () => {
-        document.removeEventListener("keydown", closeModalHandler);
+        window.removeEventListener("keydown", closeModalHandler);
       },
     }
   );

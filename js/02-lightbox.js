@@ -19,11 +19,16 @@ const imageList = galleryItems.map((galleryItem) => {
 ulEl.insertAdjacentHTML("beforeend", string);
 
 function openModalHandler(event) {
-    event.preventDefault();
-    const lightBox = new SimpleLightbox('.gallery a', { 
-        captionsData: 'alt',
-        captionDelay: 250,
- }); 
- lightBox.on('show.simplelightbox', function () {})}
+   event.preventDefault();
+   if (event.target.nodeName !== "IMG"){
+     return
+   }
+  }
+   const lightBox = new SimpleLightbox('.gallery a', { 
+       captionsData: 'alt',
+       captionDelay: 250,
+}); 
+lightBox.on('show.simplelightbox', function () {})
+
  
    
